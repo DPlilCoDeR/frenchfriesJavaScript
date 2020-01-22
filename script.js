@@ -1,13 +1,13 @@
 var papas = {
-    cantidad:0,
+    cantidad:1,
     cortadas:false,
-    estado:["crudo","Hecho","quemado"],
+    estado:["crudo","Hecho","quemado"]
 };
 console.log(papas);
 
 function cuantasPapas() {
     papas.cantidad ++;
-    console.log("tienes", papas.cantidad)
+    console.log("tienes", papas.cantidad);
     return;
 }
 
@@ -17,7 +17,14 @@ function cortarPapas() {
         return;
     }
     papas.cortadas = true;
-    return console.log(papas.cortadas);
+    return console.log("estan cortadas correctamente.");
+    
+}
+function cambiarEstado() {
+    const estado = papas.estado[Math.floor(Math.random()*papas.estado.length)];
+    console.log(estado);        
+
+    return;
 }
 
 function freirPapas() {
@@ -25,6 +32,6 @@ function freirPapas() {
         alert("no puedes freirlas si estan enteras");
         return;
     }
-    setInterval(freirPapas(),5000);
+    cambiarEstado();
     return;
 }
