@@ -1,17 +1,17 @@
 var papas = {
-    cantidad:1,
+    cantidad:0,
     cortadas:false,
-    estado:["crudo","Hecho","quemado"]
+    cocinado:"",
 };
 console.log(papas);
 
-function cuantasPapas() {
+function cantidad() {
     papas.cantidad ++;
     console.log("tienes", papas.cantidad);
     return;
 }
 
-function cortarPapas() {
+function cortar() {
     if (papas.cantidad === 0) {
         alert("no puedes cortar lo que no tienes");
         return;
@@ -20,18 +20,18 @@ function cortarPapas() {
     return console.log("estan cortadas correctamente.");
     
 }
-function cambiarEstado() {
-    const estado = papas.estado[Math.floor(Math.random()*papas.estado.length)];
-    console.log(estado);        
-
+function queTanHechoEsta() {
+    const estadodecoccion = ["crudo","poco hecho", "en su punto", "muy hecho", "quemado"];
+    papas.cocinado = estadodecoccion[Math.floor(Math.random()*estadodecoccion.length)];        
+    console.log(papas);
     return;
 }
 
-function freirPapas() {
+function Cocinar() {
     if (papas.cortadas == false) {
         alert("no puedes freirlas si estan enteras");
         return;
     }
-    cambiarEstado();
+    queTanHechoEsta();
     return;
 }
